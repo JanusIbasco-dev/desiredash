@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DesireAI</title>
+
+  <link rel="stylesheet" href="1dash.css">
+  <link rel="icon" type="image/png" href="./imgs/dxiricon.png">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="./imgs/dxirlogo1.png" alt="DesireAI Logo">
+
+    </div>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#support">Support</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+
+    <div class="particles"></div>
+
+    <div class="hero-text">
+      <div class="intro-label">
+        <span class="spark">&#10022;</span>
+        <p>DesireAI</p>
+      </div>
+
+      <h1>
+        The future of student productivity starts <span>here.</span>
+      </h1>
+
+      <div class="hero-line"></div>
+
+      <p class="description">
+        An intelligent academic platform focused on productivity, learning, and growth.
+      </p>
+    </div>
+
+    <div class="hero-logo">
+      <img src="./imgs/dxir.png" alt="DXIR Logo" />
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+
+    <div class="vertical-fade"></div>
+
+    <div class="section-label">
+      <span></span>
+      <p>PROJECTS</p>
+    </div>
+
+    <div class="project-logo">
+      <img src="./imgs/syntra.png" alt="Syntra Logo">
+    </div>
+
+    <div class="project-layout">
+      <div class="project-content">
+        <h2>Syntra</h2>
+
+        <p>
+          Syntra is an AI-powered academic platform built for college students to simplify learning, improve organization, and increase productivity. The platform provides intelligent tools that help students manage educational resources, understand difficult concepts, and maintain a more efficient academic workflow. </p>
+      </div>
+
+      <aside class="coming-teaser" aria-label="Coming soon projects">
+        <div class="teaser-heading">
+          <span></span>
+          <p>Coming Soon...</p>
+        </div>
+
+        <p>More student-focused projects are currently in development.</p>
+      </aside>
+    </div>
+
+  </section>
+
+  <footer class="dxir-footer">
+    <img src="./imgs/dxiricon.png" alt="DXIR Logo">
+    <p>DXIR © 2026</p>
+  </footer>
+
+  <script>
+    const logo = document.querySelector('.hero-logo img');
+
+    let flickers = 0;
+
+    function startupFlicker() {
+      const brightness = [0.00, 0.03, 0.07, 0.12, 0.18, 0.02, 0.20];
+
+      const randomOpacity =
+        brightness[Math.floor(Math.random() * brightness.length)];
+
+      logo.style.opacity = randomOpacity;
+
+      if (Math.random() > 0.8) {
+        logo.style.filter = "drop-shadow(0 0 80px rgba(168,85,247,0.5))";
+      } else {
+        logo.style.filter = "drop-shadow(0 0 40px rgba(168,85,247,0.2))";
+      }
+
+      flickers++;
+
+      if (flickers < 12) {
+        const randomDelay = 40 + Math.random() * 120;
+        setTimeout(startupFlicker, randomDelay);
+      } else {
+        logo.style.opacity = 0.55;
+        logo.style.filter = "drop-shadow(0 0 40px rgba(168,85,247,0.25))";
+      }
+    }
+
+    startupFlicker();
+  </script>
+
+</body>
+
+</html>
